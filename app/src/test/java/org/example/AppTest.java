@@ -19,8 +19,7 @@ class AppTest {
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 2, 3, 3, 4));
         ArrayList<Integer> result = App.removeDuplicates(list);
 
-        assertTrue(result.containsAll(Arrays.asList(1, 2, 3, 4)));
-        assertEquals(4, result.size());
+        assertEquals(Arrays.asList(1, 2, 3, 4), result);
     }
 
     @Test
@@ -28,8 +27,7 @@ class AppTest {
         ArrayList<String> list = new ArrayList<>(Arrays.asList("A", "B", "A", "C"));
         ArrayList<String> result = App.removeDuplicates(list);
 
-        assertTrue(result.containsAll(Arrays.asList("A", "B", "C")));
-        assertEquals(3, result.size());
+        assertEquals(Arrays.asList("A", "B", "C"), result);
     }
 
     @Test
@@ -38,5 +36,13 @@ class AppTest {
         ArrayList<Integer> result = App.removeDuplicates(list);
 
         assertTrue(result.isEmpty());
+    }
+
+    @Test
+    void testNoDuplicates() {
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));
+        ArrayList<Integer> result = App.removeDuplicates(list);
+
+        assertEquals(Arrays.asList(1, 2, 3), result);
     }
 }
