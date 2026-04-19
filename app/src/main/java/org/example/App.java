@@ -1,7 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class App {
@@ -10,20 +10,13 @@ public class App {
         return "Hello World!";
     }
 
-
+    // Remove duplicates using a Set (keeps original order)
     public static <T> ArrayList<T> removeDuplicates(ArrayList<T> list) {
-        Set<T> set = new HashSet<>(list);   // removes duplicates
-        return new ArrayList<>(set);        // convert back to ArrayList
+        Set<T> set = new LinkedHashSet<>(list);
+        return new ArrayList<>(set);
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(2);
-        list.add(3);
-
-        ArrayList<Integer> result = removeDuplicates(list);
-        System.out.println(result);
+        System.out.println(new App().getGreeting());
     }
 }
